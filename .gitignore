@@ -1,0 +1,29 @@
+#npm
+npm-debug.log
+node_modules/*
+!node_modules/app
+
+#npm
+.npmignore
+
+#mac
+.DS_Store
+
+#html5boilerplate
+.htaccess
+
+#testing
+js/coverage
+
+#nodemon
+.rebooted
+
+#sass
+.sass-cache
+
+#files folder for local testing
+files/
+public/img/
+
+#development folder
+development/
