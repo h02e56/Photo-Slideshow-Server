@@ -1,5 +1,5 @@
 {
-  "name": "server",
+  "name": "slideshow",
   "version": "0.0.1",
   "description": "non sense server for create a photo slideshow. just do this for practice and fun and for my brother birthay",
   "main": "./public/index.js",
