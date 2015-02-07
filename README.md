@@ -1,10 +1,36 @@
-Photo SlideShow for a local Server
+photo slideshow server 
 =====
+A non sense(?) and unnecessary(?) photo slideshow server. 
+Just do this for practice and fun and for my brother birthay projections.
 
-Non sense server for give a headache to your friends with your travel photos..joking
 
-Just playing with node, websockets, npm packages. The idea is make a slideshow from external disk for my brother's aniversary
+The server will read your configurated photos folder and create a menu for the client based in folders inside the provided photos folder(depending)
+. Just planned 1 level folder deep...need to do better this part to do something more interesting
 
-Work pending...
+## Basic usage
+
+###Configuration
+
+Edit config.js, most important:
+	* 'photosPath'
+	* 'intervalTime' in milliseconds,
+
+```js
+module.exports = {
+	PORT: (process.env.NODE_ENV === 'production' ? 80 : 3000),
+	WSPORT: (process.env.NODE_ENV === 'production' ? 80 : 8080),
+	photosPath: './files/',//shoud change to your path
+	intervalTime: 7000
+}
+```
+## Usage
+
+```sh
+$ node server
+```
+
+## LICENSE
+
+MIT license, read [LICENSE file](https://raw.githubusercontent.com/ifraixedes/gitevents-mailer/master/LICENSE) for more information.
 
 

@@ -3,13 +3,13 @@ var hyperglue = require('hyperglue');
 var find = require('findit')
 var fs = require('fs');
 
-var finder = find(config.photosPath)
-
 var directories = []
-	, template = fs.readFileSync('tmp/index.html');//our template
+	, template = fs.readFileSync('tmp/index.html')//our template
 	, wstream = fs.createWriteStream('public/index.html');//our static final html
 
-module.exports = function(cb){
+module.exports = function(folder, cb){
+	
+	var finder = find(folder)	
 	
 	finder.on('directory', function (dir) {
 		var name = dir.split('/')[1]

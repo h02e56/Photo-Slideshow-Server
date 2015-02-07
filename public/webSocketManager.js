@@ -1,17 +1,20 @@
 'use strict'
-var Utils = require('utils');
-var utils = Utils.call(this)
+var Utils = require('./utils.js');
+var utils = Utils.call(this);
+var config = require('../config.js')
 
 var wrapper = document.getElementById('wrapper')
 var domImg = document.querySelector('#wrapper img')
 
-var remote = 'ws://localhost:8080';
-var intervalTime = 7000; 
+var remote = 'ws://localhost:' + config.WSPORT;
+var intervalTime = config.intervalTime; 
 
 module.exports = function(library){
 
 	var proto = {
+
 		init: function(){
+
 			var s = this._socket = new WebSocket(remote);
 			s.onmessage = function(e) {
 		 		// if (e.data == 'ok') {//start asking photos
@@ -47,7 +50,6 @@ module.exports = function(library){
 		_send: function (msg){
 			this._socket.send(JSON.stringify(msg))
 		}
-
 	}
 
 	function createImage (blob) {
@@ -66,8 +68,7 @@ module.exports = function(library){
 	}
 
 	var socket = Object.create(proto, {
-		interval: { writable:true, configurable:true, value: library },
+		interval: { writable:true, configurable:true, value: library }
 	})
 	return socket;
-
 }

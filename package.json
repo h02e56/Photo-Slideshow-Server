@@ -1,14 +1,13 @@
 {
-  "name": "slideshow",
+  "name": "Photo-Slideshow server ",
   "version": "0.0.1",
   "description": "non sense server for create a photo slideshow. just do this for practice and fun and for my brother birthay",
   "main": "./public/index.js",
-  "browser": "./public/index.js",
   "scripts": {
     "server": "nodemon server.js",
     "build": "browserify -d -t hbsfy -g ./public/index.js > ./public/build.js",
-    "test-js": "watchify -d ./public/test.js -o ./public/test-browser.js  -v",
-    "dev": "NODE_ENV=development DEBUG=* nodemon server.js"
+    "test-js": "watchify -d ./public/app.js -o ./public/test-browser.js  -v",
+    "dev": "NODE_ENV=development nodemon --debug server.js & npm run test-js"
   },
   "keywords": [
     "photo slideshow"
@@ -18,9 +17,9 @@
     "email": "josep@h02e56.com",
     "url": "http://www.h02e56.com"
   },
-  "repository": {
-    "type": "git",
-    "url": ""
+  "repository":{
+    "type":"git",
+    "url": "git@github.com:h02e56/gitevents-twitter.git"
   },
   "dependencies": {
     "request": "^2.48.0",

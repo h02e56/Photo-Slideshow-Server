@@ -4,13 +4,14 @@ var url =require('url');
 var debug = require('debug')('Server');
 var config = require('./config')
 
-//create our index html depending on photos folder
-var render = require('./render');
+var createHTML = require('./createHTML');
 
-render(function(){
+//create our initial index html on server depending on photos folder estructure 
+//on done serve it 
+createHTML(config.photosPath, function(){
 	//static file Server
-	var staticServer = require('node-static');
-	var staticFiles = new staticServer.Server('./public');
+	var staticServer = require('node-static')
+		, staticFiles = new staticServer.Server('./public');
 
 	// server
 	var server = http.createServer(function(req, res){
