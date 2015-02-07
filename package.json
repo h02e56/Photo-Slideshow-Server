@@ -6,7 +6,7 @@
   "scripts": {
     "server": "nodemon server.js",
     "test-js": "watchify -d ./public/app.js -o ./public/build.js  -v -d",
-    "dev": "NODE_ENV=development nodemon --debug server.js & npm run test-js"
+    "dev": "NODE_ENV=development  DEBUG=**  nodemon --debug server.js & npm run test-js"
   },
   "keywords": [
     "photo slideshow"
@@ -16,18 +16,18 @@
     "email": "josep@h02e56.com",
     "url": "http://www.h02e56.com"
   },
-  "repository":{
-    "type":"git",
+  "repository": {
+    "type": "git",
     "url": "git@github.com:h02e56/gitevents-twitter.git"
   },
   "dependencies": {
-    "request": "^2.48.0",
     "domready": "^1.0.7",
     "findit": "^2.0.0",
     "debug": "^2.1.1",
     "hyperglue": "^1.3.3"
   },
   "devDependencies": {
+    "debug": "^2.1.1",
     "tape": "^2.13.4"
   },
   "license": "MIT"
