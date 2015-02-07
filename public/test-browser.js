@@ -1,1 +1,0 @@
-console.error("Error: Cannot find module '/Users/josep/Documents/work/pere/public/test.js' from '/Users/josep/Documents/work/pere'")

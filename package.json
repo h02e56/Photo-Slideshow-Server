@@ -1,12 +1,11 @@
 {
-  "name": "Photo-Slideshow server ",
+  "name": "Photo-Slideshow-Server",
   "version": "0.0.1",
   "description": "non sense server for create a photo slideshow. just do this for practice and fun and for my brother birthay",
   "main": "./public/index.js",
   "scripts": {
     "server": "nodemon server.js",
-    "build": "browserify -d -t hbsfy -g ./public/index.js > ./public/build.js",
-    "test-js": "watchify -d ./public/app.js -o ./public/test-browser.js  -v",
+    "test-js": "watchify -d ./public/app.js -o ./public/build.js  -v -d",
     "dev": "NODE_ENV=development nodemon --debug server.js & npm run test-js"
   },
   "keywords": [

@@ -9,7 +9,7 @@ var domImg = document.querySelector('#wrapper img')
 var remote = 'ws://localhost:' + config.WSPORT;
 var intervalTime = config.intervalTime; 
 
-module.exports = function(library){
+module.exports = function(){
 
 	var proto = {
 
@@ -67,8 +67,7 @@ module.exports = function(library){
 		utils.removeClass(domImg, 'hide');
 	}
 
-	var socket = Object.create(proto, {
-		interval: { writable:true, configurable:true, value: library }
-	})
-	return socket;
+	var socket = Object.create(proto)
+	
+	return socket.init();
 }
